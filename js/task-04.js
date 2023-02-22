@@ -7,15 +7,17 @@ const counter = {
         this.counterValue -=1
     },
 }
-const button = document.querySelectorAll('button');
+const btnDec = document.querySelector('button[data-action="decrement"]');
+const  btnEnc = document.querySelector('button[data-action="increment"]');
+console.dir(btnEnc)
 const valueItem = document.querySelector('#value')
 
-button[0].addEventListener('click', ()=>{
+btnDec.addEventListener('click', ()=>{
 counter.decrement()
 valueItem.textContent = counter.counterValue
 }
 )
-button[1].addEventListener('click', ()=>{
+btnEnc.addEventListener('click', ()=>{
     counter.increment()
     valueItem.textContent = counter.counterValue
     }

@@ -2,8 +2,7 @@ const countEl = document.querySelector('input[type="number"]')
 const btncreate = document.querySelector('button[data-create]')
 const btndestroy = document.querySelector('button[data-destroy]')
 const boxForDiv= document.querySelector('#boxes')
-
-
+let numberDef = 0
 let arrDiv = []
 
 function createEl(w, h){
@@ -17,7 +16,7 @@ function createEl(w, h){
   arrDiv.push(createDiv)
 }
 
-function createEls(){
+function createEls(evt){
   let w = 30
   let h = 30
   for (let i=0; i<countEl.value; i+=1) {
@@ -25,14 +24,16 @@ function createEls(){
     w +=10;
     h+=10;
   }
-  boxForDiv.append(...arrDiv)
+    boxForDiv.append(...arrDiv)
+    arrDiv = []
 }
 
 btncreate.addEventListener('click', createEls)
 btndestroy.addEventListener('click', destroyBoxes)
 
 function destroyBoxes(){  
-  boxForDiv.innerHTML=''
+  boxForDiv.innerHTML='';
+  countEl.value = ''
 }
 
 

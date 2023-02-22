@@ -13,5 +13,5 @@ function onFormSubmit (event){
        return alert("Всі поля повинні бути заповнені!");
     }
     form.reset()
-    console.log(` Login  - ${email},\n password  - ${password}`)
+    console.log({email:email, password:password})
 }
